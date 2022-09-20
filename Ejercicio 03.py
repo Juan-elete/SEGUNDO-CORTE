@@ -79,4 +79,67 @@ def conejos(m):       #Inicio de la funcion
         l_vacia.append(n1)
     print("El granjero podrá vender", l_vacia[12],"parejas de conejos.")  # El resultado de la serie de Fibonacci se da en parejas de conejos, es decir, si dice 1 es que hay 2 conejos, si dice 2 hay 4, etc.
 conejos(12)  #Se evalúa la función con el número de meses
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#TODO: Seguir realizando la verificación del codigo
+class Taller:
+    def __init__(self, fechaentr, cost, model, año, dueño):
+        self.fechaentr = fechaentr
+        self.cost = cost
+        self.model = model
+        self.año = año
+        self.dueño = dueño
+    def empleados (self, nombreem, cargoem, salarioem, vehiculoem, documentoem):
+        self.nombreem=nombreem
+        self.cargoem=cargoem
+        self.salarioem=salarioem
+        self.vehiculoem=vehiculoem
+        self.documentoem=documentoem
+    def garage (self,tiempog):
+        costog=100000*tiempog
+        self.costog=costog
+        print('Por mantener el vehículo bajo el cuidado del local durante', tiempog, 'horas, se le ha generado una factura por', self.costog,'$')
+    def caja(self, paga):
+        dinero_dispo=1000000000
+        dinero_dispo+=paga
+        listacaja=[]
+        if paga >= self.cost:
+            y = paga - self.cost
+            print("El vehiculo ha sido retirado con éxito, se le han devuelto ", y, "$ pesos.")
+            self.caja='El vehículo ha sido retirado.'
+            x='Vehiculo', self, 'ha sido retirado.'
+            dinero_dispo=dinero_dispo-y
+            listacaja.append(x)
+        else:
+            print("Para poder retirar este vehiculo, es necesaria una mayor suma de dinero.")
+    def admin_contra(self,proced,nombrea,cargoa,salarioa,vehiculoa,documentoa):
+        listanuev = []
+        if proced=='Despedir':
+            z=input('Identificacion del empleado')
+            for i in listanuev:
+                if i==z:
+                    listanuev.pop[i]
+        elif proced=='Contratar':
+            listanuev.append(admin_contra(self,nombrea,cargoa,salarioa,vehiculoa,documentoa))
+    def pagar_em(self,cantidad):
+        self.salarioem=salarioem+cantidad
+    def base_datos(self,nombreu):
+        for j in listanuev:
+            if j==nombreu:
+                print('El usuario ha sido encontrado y su vehículo es:',self.modelo.)
+            else:
+                tr=False
+        if tr=False:
+            print('Lo sentimos, el usuario no ha sido encontrado')
 
+# Lista de los vehículos registrados anteriormente.
+
+v_01 = Taller('19/09/2009', 90000000, 'Toyota', 2008, 'Erick Ortiz')
+v_02 = Taller('11/03/2011', 65000000, 'Chevrolet', 2009, 'Mateo Flores')
+v_03 = Taller('31/05/2022', 150000000, 'Tesla', 2021, 'Kevin Rodriguez')
+#Para ingresar un vehículo al taller ejecutar mediante la consola lo siguiente:
+#v_04(número del vehículo)= Taller('Fecha', valor, 'Modelo', Año, 'Nombre')
+#Lista de los empleados.
+p_01.empleados ('Laura Rodriguez', 'Gerente', 5000000, 'Susuki gixxer', 102387699)
+p_02.empleados ('Juan Muñoz', 'Jefe de ventas', 2000000, 'Toyota yaris', 108723902)
+p_03.empleados ('Mauro Zapata', 'Supervisor', 3000000, 'Tesla model 3', 101245671)
+p_04.empleados ('Johana Gutierrez', 'Contadora', 1800000, 'Chevrolet camaro', 105334118)
