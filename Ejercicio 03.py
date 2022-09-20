@@ -125,10 +125,10 @@ class Taller:
     def base_datos(self,nombreu):
         for j in listanuev:
             if j==nombreu:
-                print('El usuario ha sido encontrado y su vehículo es:',self.modelo.)
+                print('El usuario ha sido encontrado y su vehículo es:',self.modelo)
             else:
                 tr=False
-        if tr=False:
+        if tr==False:
             print('Lo sentimos, el usuario no ha sido encontrado')
 
 # Lista de los vehículos registrados anteriormente.
@@ -138,8 +138,9 @@ v_02 = Taller('11/03/2011', 65000000, 'Chevrolet', 2009, 'Mateo Flores')
 v_03 = Taller('31/05/2022', 150000000, 'Tesla', 2021, 'Kevin Rodriguez')
 #Para ingresar un vehículo al taller ejecutar mediante la consola lo siguiente:
 #v_04(número del vehículo)= Taller('Fecha', valor, 'Modelo', Año, 'Nombre')
+
 #Lista de los empleados.
-p_01.empleados ('Laura Rodriguez', 'Gerente', 5000000, 'Susuki gixxer', 102387699)
-p_02.empleados ('Juan Muñoz', 'Jefe de ventas', 2000000, 'Toyota yaris', 108723902)
-p_03.empleados ('Mauro Zapata', 'Supervisor', 3000000, 'Tesla model 3', 101245671)
-p_04.empleados ('Johana Gutierrez', 'Contadora', 1800000, 'Chevrolet camaro', 105334118)
+#p_01.empleados ('Laura Rodriguez', 'Gerente', 5000000, 'Susuki gixxer', 102387699)
+#p_02.empleados ('Juan Muñoz', 'Jefe de ventas', 2000000, 'Toyota yaris', 108723902)
+#p_03.empleados ('Mauro Zapata', 'Supervisor', 3000000, 'Tesla model 3', 101245671)
+#p_04.empleados ('Johana Gutierrez', 'Contadora', 1800000, 'Chevrolet camaro', 105334118)
