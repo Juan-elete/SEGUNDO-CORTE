@@ -1,0 +1,32 @@
+
+# 21 -  ESTRUCTURAS DE DATOS - PILAS
+'''
+Otra de las estructuras que veremos son las pilas, en este caso, el ultimo dato en ser agregado es el primero en salir
+'''
+
+## definición de la clase
+class pila (object):
+    def __init__(self):
+        self.items = []
+
+    def add (self,new):
+        self.items.append(new)
+
+    def remove(self):
+        self.items.pop()
+
+    def val_vac(self):
+        l=len(self.items)
+        v=0
+        for i in self.items:
+            if i==' ':
+                v+=1
+        if v==l:
+            print('La estructura se encuentra vacia.')
+    def val_cu(self,obj):
+        for i in self.items:
+            if i==obj:
+                b=self.items[i]
+                print('El objeto mencionado se encuentra en la posicion', b)
+    # TODO: realizar una función que permita validar si la estructura está vacia
+    # TODO: realizer una función que permita validar el valor de cualquier elemetno en la estructura
