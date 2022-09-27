@@ -1,0 +1,108 @@
+class lista (object):
+    def __init__(self):
+        self.anterior = []
+        self.siguiente = []
+        self.atributos = []
+
+    def agregar_end (self,new):
+        # se evalua el caso trivial (que se encuentre en la ultima posición)
+        if self.siguiente == []:
+            # Se realiza la asignación de datos
+            self.siguiente = new
+            # se modifica el dato siguiente de manera que el dato actual
+            self.siguiente.anterior = self
+        # para el caso no trivial
+        else:
+            self.siguiente.agregar_end(new)
+    def ag_in (self, new2):
+        if self.anterior==[]:
+            self.anterior=new2
+            self.anterior.siguiente=self
+        else:
+            self.anterior.ag_in(new2)
+    def ag_cu (self, new3):
+        if self.anterior==[] and self.siguiente==[]:
+            self.siguiente=[new3]
+            self.siguiente.anterior=self
+        else:
+            self.siguiente.ag_cu(new3)
+
+#APLICACION
+class lista (object):
+    def __init__(self):
+        self.anterior = []
+        self.siguiente = []
+        self.atributos = []
+
+    def agregar_end (self,new):
+        # se evalua el caso trivial (que se encuentre en la ultima posición)
+        if self.siguiente == []:
+            # Se realiza la asignación de datos
+            self.siguiente = new
+            # se modifica el dato siguiente de manera que el dato actual
+            self.siguiente.anterior = self
+        # para el caso no trivial
+        else:
+            self.siguiente.agregar_end(new)
+
+L_01=lista()
+L_01.agregar_end('S')
+L_01.agregar_end('O')
+L_01.agregar_end('P')
+L_01.agregar_end('A')
+print(self.anterior)
+print(self.siguiente)
+print(self.atributo)
+
+
+class pila (object):
+    def __init__(self):
+        self.items = []
+
+    def add (self,new):
+        self.items.append(new)
+
+    def remove(self):
+        self.items.pop()
+
+p_01=pila()
+p_01.add('C')
+p_01.add('S')
+p_01.add('A')
+p_01.add('L')
+p_01.add('D')
+p_01.remove()
+p_01.add('O')
+
+class cola(object): # Se define la clase que corresponde a los datos en la cola
+    # función de inicialización
+    def __init__(self):
+        # como parametro valores importantes se tiene el dato siguiente en la cola
+        self.siguiente = []
+        # adicionalmente se tienen los demás atributos del objeto
+        self.atributos = []
+
+    def agregar (self,new):
+        # Condición final -> se esta en el ultimo elemento de la cola
+        if self.siguiente == []:
+            self.siguiente = new
+        else:
+            # en caso que se intenta agregar en siguiente elemento de la lista
+            self.siguiente.agregar(new)
+
+    def remove (self):
+        next  = self.siguiente
+        if next.siguiente == []:
+            self.siguiente = []
+        else:
+            self.siguiente.remove()
+
+c_01=cola()
+c_01.agregar(6)
+c_01.agregar(7)
+c_01.agregar(8)
+c_01.remove
+
+#En cuanto a ventajas y desventajas en la primera, es dificil acceder a los valores en medio, igual pasa con la segunda, mientras
+#que con la tercera es un poco mas facil, facilitando la labor de búsqueda de valores o carácteres requeridos
+#para X contexto o X actividad.
