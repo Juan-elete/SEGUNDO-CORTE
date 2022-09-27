@@ -1,0 +1,21 @@
+def f_busquedaBinaria(l_lista,s_target):
+    s_idx = len(l_lista)//2
+    s_centro = l_lista[s_idx]
+    if s_centro == s_target:
+        return s_centro
+    elif s_centro > s_target:
+        l_newList = l_lista[:s_idx]
+        return f_busquedaBinaria(l_newList,s_target)
+    if s_centro!=s_target and s_idx!=s_target:
+        print('No ha sido encontrado. []')
+    else:
+        l_newList = l_lista[s_idx:]
+        return f_busquedaBinaria(l_newList, s_target)
+
+
+l_list = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+print(f_busquedaBinaria(l_list,14))
+
+#El código cuando no encuentra el valor solicitado va a retornar []
+#El segúndo metodo de búsqueda a diferencia de primero, se toma un poco de tiempo en realizar el análisis que el código de forma eficiente,
+#pero no tan eficiente como lo hace el primer método, por eso, considero que el primer método de búsqueda es más sencillo y práctico de usar.
