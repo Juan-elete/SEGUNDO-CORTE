@@ -1,0 +1,118 @@
+class persona (object):
+    def __init__(self,nombre,hermanos,padres):
+        self.nombre=nombre # Nombre de la persona
+        self.Hermanos=hermanos.split() # hermanos de la persona (n datos)
+        self.Padres=padres.split() # padres de la persona (2 datos o menos)
+        self.HHermanos=str(self.Hermanos)
+        self.PPadres=str(self.Padres)
+        print(self.Hermanos,self.Padres)
+    def add_siblings (self,sib):
+        self.Hermanos.append(sib)
+        print(sib,'Ha sido añadido a la lista de hermanos')
+    def add_parents (self,parent):
+        self.Padress=len(self.Padres)
+        if self.Padress < 2:
+            self.Padres.append(parent)
+        else:
+            print('No se puede agregar')
+    def f_busqueda_Secuencial (self,nombre):
+        #En esta función se tomo como base el método de búsqueda 01, al ser varias listas se dividió en varias
+        #partes el código pero sigue siendo la misma estructura de la búsqueda secuencial.
+        ab=nombre.split()
+        z=[]
+        for w in ab:
+            r=w.lower()
+            z.append(r)
+        self.nombrep=z
+        for p in z:
+            u=p.capitalize()
+            self.nombrep=u
+        altura=0
+        #La altura fue tomada en sentido ascendente, es decir, el nodo es altura 0, sus hijos altura 1, sus hijos altura 2, etc.
+        if self.nombre==self.nombrep:
+            return(self.nombrep,'fué encontrado(a), es la persona principal y se encuentra en la altura', altura)
+        for i in self.Hermanos:
+            if i==self.nombrep:
+                altura+=2
+                return(self.nombrep,'fué encontrado(a), es un(a) hermano(a) y se encuentra en la altura', altura)
+        for j in self.Padres:
+            if j==self.nombrep:
+                altura+=1
+                return(self.nombrep,'fué encontrado(a), es uno de los padres de la persona y se encuentra en la altura', altura)
+
+    def tree2dict (self):
+        #En esta sección, se coloca la llave entre los corchetes y despues del = se coloca el valor,
+        #se repiten los nombres porque se especifica en el #TODO que es necesario usar el nombre como llave
+        #y los padres y hermanos tambien.
+        diccionario={}
+        diccionario['Persona principal']=self.nombre
+        diccionario[self.nombre]='Persona principal'
+        diccionario['Hermanos']=self.Hermanos
+        diccionario['Padres']=self.Padres
+        for i in self.Hermanos:
+            diccionario[i]='Hermano(a)'
+        for j in self.Padres:
+            diccionario[j]='Padre/Madre'
+        ad=diccionario
+        return(ad)
+
+    def encript(self,nombre):
+        self.nombrearch=nombre
+        zn=self.nombrearch+'.txt'
+        print(zn)
+        with open(zn,'a') as file:
+            file.write('\n'+self.nombre)
+            file.write('\n'+self.PPadres)
+            file.write('\n'+self.HHermanos)
+            #SE HIZO LA COMPROBACION EN 2 PLATAFORMAS Y ESTA SECCION SI FUNCIONA
+        # TODO: Implementar una función que permita converti el arbol en un archivo encriptado (1.0)
+    def decrip(self,nombre):
+        self.nombrearch=nombre
+        zn=self.nombrearch+'.txt'
+        archivo=open(zn,'rt',encoding='utf-8')
+        print(archivo.read())
+        return('Arbol creado')
+        # SE HIZO LA COMPROBACION EN 2 PLATAFORMAS Y ESTA SECCION SI FUNCIONA
+##
+'''
+la siguiente sección se debe realizar en un archivo distinto llamado TALLER02-2_nombre_apellido.py
+'''
+#TODO: iniciar y crear el arbol con una profundidad de almenos 4 con su familia (0.2)
+#TODO: validar la función de busqueda (0.2)
+'''
+Ejecutar la siguiente línea de código en la consola de python.
+p_01=persona('Jose','Smith Samuel','Maria Vicente')
+p_01.f_busqueda_Secuencial('Jose')   #Jose puede ser cambiado por algun otro integrante
+
+RESULTADO:
+('Jose', 'fu� encontrado(a), es la persona principal y se encuentra en la altura', 0)
+'''
+
+#TODO: validad la encriptación de los archivos (0.2)
+'''
+LA SOLUCION ESTA JUNTO AL PUNTO SIGUIENTE (DECRIPTACION)
+'''
+#TODO: validar la decriptación de archivos (0.2)
+'''
+Ejecutar la siguiente línea de código en la consola de python.
+p_01=persona('Jose','Smith Samuel','Maria Vicente')
+p_01.encript('prueba')
+p_01.decrip('prueba')
+
+RESULTADO:
+Jose
+['Maria', 'Vicente']
+['Smith', 'Samuel']
+'Arbol creado'
+'''
+#TODO: validar la converción a diccionario (0.2)
+'''
+Ejecutar la siguiente línea de código en la consola de python.
+p_01=persona('Jose','Smith Samuel','Maria Vicente')
+p_01.tree2dict()
+
+RESULTADO:
+{'Persona principal': 'Jose', 'Jose': 'Persona principal', 'Hermanos': ['Smith', 'Samuel'], 'Padres': ['Maria', 'Vicente'], 'Smith': 'Hermano(a)', 'Samuel': 'Hermano(a)', 'Maria': 'Padre/Madre', 'Vicente': 'Padre/Madre'}
+'''
+
+#NOTA ESTUDIANTE: La validación se ha hecho, tengo una duda, tiene que ser presentada de forma presencial en la clase?. Gracias
