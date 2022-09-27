@@ -1,0 +1,16 @@
+def f_busqueda_Secuencial(l_List,s_target):
+    for idx in range(len(l_List)):
+        s_temp = l_List[idx]
+        if s_temp == s_target:
+            return idx
+    print('no se encotró el valor')
+    return []
+
+l_lis = ['F','I','S','AAA','ABC',889900,'Juan','Z',8,9]
+s_target = 'AAA'
+print(f_busqueda_Secuencial(l_lis,s_target))
+
+
+#La funcion se comporta de tal modo que en el momento de ingresar una lista y el objetivo, retorna la posición en la que se encuentra
+#el objetivo ingresado anteriormente.
+#Se realizó la comprobación mediante el código anterior, dando como resultado que el código funciona de manera correcta y eficiente.
