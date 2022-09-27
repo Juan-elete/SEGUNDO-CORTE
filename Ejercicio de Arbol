@@ -1,0 +1,21 @@
+class arbol (object):
+    def __init__(self,valor):
+        self.mayor = []
+        self.menor = []
+        self.valor = valor
+    def agregar(self,new):
+        s_val = self.valor
+        if s_val < new:
+            if self.menor == []:
+                self.menor.valor = new
+            else :
+                self.menor.agregar(new)
+        else:
+            if self.mayor == []:
+                self.mayor.valor = new
+            else:
+                self.mayor.agregar(new)
+    def busqueda(self,obj):
+        for i in self.mayor:
+          if i ==obj:
+            print('El valor ha sido encontrado')
